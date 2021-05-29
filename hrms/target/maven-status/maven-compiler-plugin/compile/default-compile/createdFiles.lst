@@ -1,0 +1,15 @@
+kodlamaio\hrms\entities\concrates\Unemployed.class
+kodlamaio\hrms\api\controllers\ProductsController.class
+kodlamaio\hrms\entities\concrates\Users.class
+kodlamaio\hrms\HrmsApplication.class
+kodlamaio\hrms\dataAccess\abstracts\EmployersDao.class
+kodlamaio\hrms\business\abstracts\JobsService.class
+kodlamaio\hrms\entities\concrates\Employers.class
+kodlamaio\hrms\business\abstracts\EmployersService.class
+kodlamaio\hrms\business\abstracts\HrmsPersonelService.class
+kodlamaio\hrms\business\abstracts\UnemployedService.class
+kodlamaio\hrms\business\concrates\UnemployedService.class
+kodlamaio\hrms\entities\concrates\HrmsPersonel.class
+kodlamaio\hrms\dataAccess\abstracts\HrmsPersonelDao.class
+kodlamaio\hrms\business\concrates\EmployersManage.class
+kodlamaio\hrms\dataAccess\abstracts\UnemployedDao.class
