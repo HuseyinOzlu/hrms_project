@@ -34,7 +34,6 @@ public class EmployersController {
 	public Result add(@RequestBody Employers employers) {
 		return this.employerService.add(employers);
 		
-		
 	}
 }
 

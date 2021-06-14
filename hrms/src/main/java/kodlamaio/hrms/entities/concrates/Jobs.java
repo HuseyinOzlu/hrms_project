@@ -41,8 +41,8 @@ public class Jobs {
 	@Column(name="salary")
 	private int salary;
 	
-	//(mappedBy = "jobs")
-//	private List<City> city;
+//	 @OneToMany(mappedBy = "jobs")
+//	 private List<City> city;
 	
 	//@ManyToOne
 	//@JoinColumn(name="job_id")

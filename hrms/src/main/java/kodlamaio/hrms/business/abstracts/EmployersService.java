@@ -14,8 +14,8 @@ public interface EmployersService {
 		
 		Result add(Employers employers);
 		
-	//	DataResult<List<Employers>> getByEmplyoresNameAndJobsIdAndJobsName
-	//	(String name, int jobsId, String jobsName);
-
+	/*	DataResult<List<Employers>> getByEmplyoresNameAndJobsIdAndJobsName
+		(String name, int jobsId, String jobsName);
+*/
 		
 }	

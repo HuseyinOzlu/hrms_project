@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+
 import kodlamaio.hrms.business.abstracts.JobsService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
+import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
+import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.JobsDao;
 import kodlamaio.hrms.entities.concrates.Jobs;
 
@@ -29,6 +32,12 @@ public class JobManage implements JobsService {
 	public DataResult<List<Jobs>> getAll() {
 		return new SuccessDataResult<List<Jobs>>(this.jobsDao.findAll(),
 				"Data Listed");
+	}
+
+	@Override
+	public Result add(Jobs jobs) {
+		this.jobsDao.save(jobs);
+		return new SuccessResult("Success");
 	}
 
 

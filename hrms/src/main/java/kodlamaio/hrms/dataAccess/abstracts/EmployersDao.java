@@ -8,16 +8,16 @@ import kodlamaio.hrms.entities.concrates.Employers;
 import kodlamaio.hrms.entities.concrates.Jobs;
 
 public interface EmployersDao extends JpaRepository<Employers, Integer> {
-//	Employers getByEmployersName(String employerName);
+/*
+	List<Employers> getByEmployersAndEmployersName(int id, String name);
+	Employers getByEmployersName(String employerName);
 	
-//	Employers getByEmployersNameAndJobs_JobsId(String employerName, int jobId);
+	Employers getByEmployersNameAndJobs_JobsId(String employerName, int jobId);
 	
-//	List<Jobs> getByJobs_JobsInAndJobs_JobsName(List<Integer> jobs, String name);
+	List<Jobs> getByJobs_JobsInAndJobs_JobsName(List<Integer> jobs, String name);
 	
-//	List<Employers> getByEmployersIdAndEmployersName(int id, String Name);
+	List<Employers> getByEmployersNameAndJobs_JobsIdAndJobs_Jobs_Name
+	(String name, int jobsId, String jobsName);
 	
-//	List<Employers> getByEmployersNameAndJobs_JobsIdAndJobs_Jobs_Name
-//	(String name, int jobsId, String jobsName);
-	
-	
+	*/
 }

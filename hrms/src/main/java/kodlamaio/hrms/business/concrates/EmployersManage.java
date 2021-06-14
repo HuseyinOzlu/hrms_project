@@ -3,7 +3,6 @@ package kodlamaio.hrms.business.concrates;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.EmployersService;
@@ -19,7 +18,6 @@ import kodlamaio.hrms.dataAccess.abstracts.EmployersDao;
 import kodlamaio.hrms.entities.concrates.Employers;
 
 @Service
-@Lazy
 public class EmployersManage implements EmployersService {
 
 	private EmployersDao employersDao;
@@ -48,6 +46,7 @@ public class EmployersManage implements EmployersService {
 
 	@Override
 	public Result add(Employers employers) {
+		
 	 
 		 if (!this.mailActivation.mailActivation()) {
 			return new ErrorResult("Please, Check your mail!!");
@@ -61,11 +60,11 @@ public class EmployersManage implements EmployersService {
 		}
 
 }
-
-//	@Override
-//	public DataResult<List<Employers>> getAll(int id, String name) {
-//		return new SuccessDataResult<List<Employers>>
-/*		(this.employersDao.getByEmployersIdAndEmployersName(id, name),"Success");
+/*
+	@Override
+	public DataResult<List<Employers>> getAll(int id, String name) {
+		return new SuccessDataResult<List<Employers>>
+		(this.employersDao.getByEmployersIdAndEmployersName(id, name),"Success");
 	}
 
 	@Override

@@ -17,9 +17,9 @@ import kodlamaio.hrms.entities.concrates.Unemployed;
 @RestController
 @RequestMapping(path = "api/unemployers")
 public class UnemployersController {
-	@Autowired
-	private UnemployedService unemployedService;
 	
+	private UnemployedService unemployedService;
+	@Autowired
 	public UnemployersController(UnemployedService unemployedService) {
 		super();
 		this.unemployedService = unemployedService;
