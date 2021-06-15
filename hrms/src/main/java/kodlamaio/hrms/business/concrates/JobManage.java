@@ -40,6 +40,26 @@ public class JobManage implements JobsService {
 		return new SuccessResult("Success");
 	}
 
+	@Override
+	public DataResult<List<Jobs>> getByIsJobOpenTrue() {
+		return new SuccessDataResult<List<Jobs>>
+		(this.jobsDao.getByIsJobOpenTrue(),"Success Open Jobs Data Listed");
+	}
+
+	@Override
+	public DataResult<List<Jobs>> getByIsJobOpenTrueAndEmployers_CompanyName(String companyName) {
+		return new SuccessDataResult<List<Jobs>>
+		(this.jobsDao.getByIsJobOpenTrueAndEmployers_CompanyName(companyName),
+				"Succes Open Jobs And Company Name Listed");
+	}
+
+	@Override
+	public DataResult<List<Jobs>> getByIsJobOpenTrueAndDateLessThanEqual(int date) {
+		return new SuccessDataResult<List<Jobs>>
+		(this.jobsDao.getByIsJobOpenTrueAndDateLessThanEqual(date),
+				"Success Open Jobs And Date Listed");
+	}
+
 
 
 	

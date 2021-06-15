@@ -1,5 +1,6 @@
 package kodlamaio.hrms.api.controllers;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +37,20 @@ public class JobsController {
 		return this.jobsService.add(jobs);
 	}
 	
-}
+	@GetMapping("/getOpenJob")
+	public DataResult<List<Jobs>> getByIsJobOpenTrue(){
+		return this.jobsService.getByIsJobOpenTrue();
+	}
+	
+	@GetMapping("/getOpenJobAndCompanyName")
+	public DataResult<List<Jobs>> getByIsJobOpenTrueAndEmployers_CompanyName(String companyName)
+	{
+		return this.jobsService.getByIsJobOpenTrueAndEmployers_CompanyName(companyName);
+	}
+	
+	@GetMapping("/getOpenJobAndDate")
+	public DataResult<List<Jobs>> getByIsJobOpenTrueAndDateLessThanEqual(int date){
+		return this.jobsService.getByIsJobOpenTrueAndDateLessThanEqual(date);
+	}
+	
+} 

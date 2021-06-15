@@ -36,6 +36,7 @@ public class EmployersManage implements EmployersService {
 		this.mailActivation = mailActivation;
 		this.hrmsPersonelCheck = hrmsPersonelCheck;
 		this.registeredCheckService = registeredCheckService;
+		this.employersDao = employersDao;
 	}
 
 	@Override

@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIgnoreProperties({"city_id","jobs"})
 public class City {
 	
 	@Id
@@ -27,9 +31,10 @@ public class City {
 
 	@Column(name="city_name")
 	private String city_name;
-/*	
+
+	@JsonIgnore
 	@ManyToOne()
 	@JoinColumn(name = "cities")
 	private Jobs jobs;
-*/
+
 }
