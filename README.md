@@ -5,5 +5,5 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 
-<h3 align="center"> Database diagram :=:</h3>
-<img width="450" align="center" src="https://github.com/hus3y1n/hrms_project/blob/main/HrmsDB/hrms.pgerd.png">
+### Database diagram :=:
+<img width="450" src="https://github.com/hus3y1n/hrms_project/blob/main/HrmsDB/hrms.pgerd.png">
