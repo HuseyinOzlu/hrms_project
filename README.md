@@ -1,4 +1,4 @@
-# HRMS project
+<h1 align="center"> HRMS project</h1>
 
 ### These were used :=:
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
