@@ -1,6 +1,8 @@
-package kodlamaio.hrms.core.utilities.adapters;
+package kodlamaio.hrms.core.utilities.adapters.concrates;
 
 import org.springframework.stereotype.Service;
+
+import kodlamaio.hrms.core.utilities.adapters.abstracts.MernisService;
 
 //import java.rmi.RemoteException;
 //import tr.gov.nvi.tckimlik.WS.KPSPublicSoap;

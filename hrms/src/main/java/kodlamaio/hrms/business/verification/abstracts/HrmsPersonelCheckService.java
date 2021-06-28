@@ -1,4 +1,4 @@
-package kodlamaio.hrms.business.abstracts;
+package kodlamaio.hrms.business.verification.abstracts;
 
 public interface HrmsPersonelCheckService {
 	boolean hrmsPersonelCheck();

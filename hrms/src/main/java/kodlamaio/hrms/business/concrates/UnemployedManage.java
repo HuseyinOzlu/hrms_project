@@ -3,12 +3,11 @@ package kodlamaio.hrms.business.concrates;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import kodlamaio.hrms.business.abstracts.RegisteredCheckService;
 import kodlamaio.hrms.business.abstracts.UnemployedService;
-import kodlamaio.hrms.core.utilities.adapters.MernisService;
+import kodlamaio.hrms.business.verification.abstracts.RegisteredCheckService;
+import kodlamaio.hrms.core.utilities.adapters.abstracts.MernisService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.ErrorResult;
 import kodlamaio.hrms.core.utilities.results.Result;
@@ -18,7 +17,6 @@ import kodlamaio.hrms.dataAccess.abstracts.UnemployedDao;
 import kodlamaio.hrms.entities.concrates.Unemployed;
 
 @Service
-@Lazy
 public class UnemployedManage implements UnemployedService {
 
 	private UnemployedDao unemployedDao;
@@ -43,14 +41,17 @@ public class UnemployedManage implements UnemployedService {
 	}
 	@Override
 	public Result add(Unemployed unemployed) {
-		if(this.mernisService.mernisCheck()) {
+		if(this.mernisService.mernisCheck()== false) {
 			return new ErrorResult("The error to Mernis check!!");
-		}else if(this.registeredCheckService.emailCheck(unemployed.getMail())) {
+		}else if(this.registeredCheckService.emailCheck(unemployed.getMail())== false) {
 			return new ErrorResult("Email is already added!!");
-		}else if(this.registeredCheckService.identityNumCheck(unemployed.getIdentityNumber())) {
+		}else if(this.registeredCheckService.identityNumCheck(unemployed.getIdentityNumber())== false) {
 			return new ErrorResult("TC, identity number is error");
 		}else{this.unemployedDao.save(unemployed);
-		return new SuccessResult("You joined, Welcome ;)");
+		return new SuccessResult("Welcome :) You joined but your account isn't verified yet"
+				+ "We send "+unemployed.getMail()+" this mail, Please check");
 	}}
+
+
 
 }

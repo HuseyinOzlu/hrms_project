@@ -30,6 +30,8 @@ public class EmployersController {
 		return this.employerService.getAll();
 	}
 	
+	
+	
 	@PostMapping("/register")
 	public Result add(@RequestBody Employers employers) {
 		return this.employerService.add(employers);
