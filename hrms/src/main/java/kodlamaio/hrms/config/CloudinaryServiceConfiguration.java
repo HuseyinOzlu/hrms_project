@@ -28,7 +28,6 @@ public class CloudinaryServiceConfiguration {
                 "api_secret", apiSecretKey));
     }
 
-    @Bean
     public CloudinaryService cloudinaryService(){
         return new CloudinaryServiceAdapters(cloudinaryUser());
     }
