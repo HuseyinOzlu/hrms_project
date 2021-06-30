@@ -7,3 +7,6 @@
 
 ### Database diagram :=:
 <img width="450" src="https://github.com/hus3y1n/hrms_project/blob/main/Hrms_DB/hrms_pgerd.pgerd.png">
+
+### Uml Diagram :=:
+<img width="450" src="https://github.com/hus3y1n/hrms_project/blob/main/Uml_Diagram/Uml_Component_Diagram.png">
