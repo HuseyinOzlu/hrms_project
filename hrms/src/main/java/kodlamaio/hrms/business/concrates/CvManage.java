@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,7 +23,6 @@ import kodlamaio.hrms.entities.concrates.UserPhoto;
 import kodlamaio.hrms.entities.dtos.UnemployedWithCvDto;
 
 @Service
-@Lazy
 public class CvManage implements CvService {
 	private CvDao cvDao;
 	private CloudinaryService photoService;
@@ -71,7 +69,7 @@ public class CvManage implements CvService {
 	Map<String, String> cloudinaryUploader = (Map<String, String>) 
 				photoService.save(file).getData();
 		String imageUrl= cloudinaryUploader.get("url");
-		UserPhoto userPhoto = userPhotoDao.findByUser_Id(userId);
+		UserPhoto userPhoto = userPhotoDao.findByUserId(userId);
 		userPhoto.setPhotoUrl(imageUrl);
 		userPhotoDao.save(userPhoto);
 		

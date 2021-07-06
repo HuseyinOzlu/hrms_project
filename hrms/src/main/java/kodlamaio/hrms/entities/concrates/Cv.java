@@ -1,13 +1,13 @@
 package kodlamaio.hrms.entities.concrates;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Table(name="cv")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","unemployed"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","unemployeds"})
 public class Cv {
 	
 	@Id
@@ -75,7 +75,10 @@ public class Cv {
 	@Column(name="front_title")
 	private String frontTitle;
 	
-	@OneToMany(mappedBy = "cv")
+	
+	@ManyToOne()
+	@JoinColumn(name = "cv")
 	@JsonIgnore
-	private List<Unemployed> unemployeds;
+	private Unemployed unemployeds;
+
 }
