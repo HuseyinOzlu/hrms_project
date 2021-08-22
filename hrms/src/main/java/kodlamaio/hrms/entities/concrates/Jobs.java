@@ -1,6 +1,6 @@
 package kodlamaio.hrms.entities.concrates;
 
-
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -52,14 +53,20 @@ public class Jobs {
 	
 	@Column(name = "is_job_open")
 	private boolean isJobOpen;
-/*	
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "jobs")
 	private List<City> city;
-*/	
+
 	@ManyToOne
 	@JoinColumn(name="job_id")
 	@JsonIgnore
 	private Employers employers;
+	
+	@OneToMany(mappedBy = "jobs")
+	private List<WorkType> workType;
+	
+	@OneToMany(mappedBy = "jobs")
+	private List<WorkFeature> workFeature;
 	
 }

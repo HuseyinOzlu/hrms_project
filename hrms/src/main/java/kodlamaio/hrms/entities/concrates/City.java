@@ -34,7 +34,7 @@ public class City {
 
 	@JsonIgnore
 	@ManyToOne()
-	@JoinColumn(name = "cities")
+	@JoinColumn(name = "cities", insertable = false, updatable = false)
 	private Jobs jobs;
 
 }

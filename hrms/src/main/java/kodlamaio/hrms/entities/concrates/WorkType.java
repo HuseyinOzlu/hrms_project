@@ -6,30 +6,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import kodlamaio.hrms.core.entities.Users;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name="worker_type")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_photos")
-public class UserPhoto {
+public class WorkType {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name="worker_type_id")
 	private int id;
+	
+	@Column(name="worker_type_name")
+	private String workerTypeName;
+
+	@ManyToOne
+	@JoinColumn(name="worker_type_id", insertable = false, updatable = false)
 	@JsonIgnore
-	@OneToOne()
-	@JoinColumn(name="user_id",referencedColumnName = "id")
-	private Users user;
-	@Column(name = "photo_url")
-	private String photoUrl;
+	private Jobs jobs;
 }
