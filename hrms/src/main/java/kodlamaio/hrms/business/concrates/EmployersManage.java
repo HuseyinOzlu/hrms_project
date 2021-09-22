@@ -1,5 +1,7 @@
 package kodlamaio.hrms.business.concrates;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,10 +58,25 @@ public class EmployersManage implements EmployersService {
 		}else if(this.registeredCheckService.passwordsSame(employers.getPass(), employers.getPassRepeat()) == false){
 			return new ErrorResult("Your passes aren't same!!,Please check");
 		}else {
-			this.employersDao.save(employers);
-			return new SuccessResult("Person added");
-		}
+			try {
+				MessageDigest messageDigestHash = MessageDigest.getInstance("MD5");
+				messageDigestHash.update(employers.getPass().getBytes());
+				byte messageDigestDizisi[] = messageDigestHash.digest();
+				StringBuffer sb16 = new StringBuffer();
+				StringBuffer sb32 = new StringBuffer();
+				for(int i = 0; i <= messageDigestDizisi.length; i++) {
+					sb16.append(Integer.toString((messageDigestDizisi[i] & 0xff) + 0x100,
+							16).substring(1));
+					sb32.append(Integer.toString((messageDigestDizisi[i] & 0xff) + 0x100,32));
+				}
+			}
+			catch(NoSuchAlgorithmException ex) {
+				System.err.println(ex);
+			}
+			 
+				this.employersDao.save(employers);
+				return new SuccessResult("Person added");
+			}
 
-}
+	}}
 
-}
